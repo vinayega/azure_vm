@@ -1,0 +1,6 @@
+
+*.tfstate
+windows_vm/.terraform.tfstate.lock.info
+windows_vm/.terraform/modules/modules.json
+.DS_Store
+windows_vm/.terraform/providers/registry.terraform.io/hashicorp/azurerm/2.83.0/darwin_amd64/terraform-provider-azurerm_v2.83.0_x5

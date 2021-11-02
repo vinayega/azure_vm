@@ -58,6 +58,8 @@ os_disk {
 
 }
 
+/*
+
 resource "azurerm_managed_disk" "disk2" {
     count = length(var.disks)
     location = var.location
@@ -82,7 +84,7 @@ resource "azurerm_virtual_machine_data_disk_attachment" "diskattach" {
 }
 
 
-
+/*
 data "azurerm_disk_encryption_set" "diskencryptionset" {
     name = "de_manageddisk"
     resource_group_name = "practice_rg"
@@ -94,6 +96,7 @@ data "azurerm_disk_encryption_set" "diskencryptionset" {
  */
 //"commandToExecute": "powershell -command \"[System.Text.Encoding]::UTF8.GetString[System.Convert]::FromBase64String('${base64encode(data.template_file.windows_post_deploy.rendered)}'))
 
+ /*
   resource "azurerm_virtual_machine_extension" "custom_script_extension" {
     
     depends_on = [
@@ -120,10 +123,10 @@ data "azurerm_disk_encryption_set" "diskencryptionset" {
     }
     PROTECTED_SETTINGS
     
-    /* jsonencode({
-        #"commandToExecute": "powershell.exe -executionpolicy bypass -command ${data.template_file.windows_post_deploy.rendered}"
-        "commandToExecute": "powershell -command \"[System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String('${data.template_file.windows_post_deploy.rendered }')) | Out-File -filepath postBuild.ps1\" && powershell -ExecutionPolicy Unrestricted -File postBuild.ps1"
-    })  */
+    // jsonencode({
+    //    #"commandToExecute": "powershell.exe -executionpolicy bypass -command ${data.template_file.windows_post_deploy.rendered}"
+    //    "commandToExecute": "powershell -command \"[System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String('${data.template_file.windows_post_deploy.rendered }')) | Out-File -filepath postBuild.ps1\" && powershell -ExecutionPolicy Unrestricted -File postBuild.ps1"
+    //})  
   
  } 
 
@@ -131,6 +134,7 @@ locals {
   stacc_key = azurerm_storage_account.storageaccount.primary_access_key
 }
 
+/*
 resource "azurerm_storage_account" "storageaccount" {
     account_tier = "Standard"
     account_replication_type = "LRS"
@@ -154,7 +158,7 @@ resource "azurerm_storage_blob" "scriptsblob" {
 }
 
 
-
+*/
 
 /* resource "null_resource" "copy1" {
     

@@ -59,13 +59,6 @@ variable "scripts-container" {
   
 }
 
-variable "mystorageAccountKey" {
-    type = string
-    description = "Storage Account Key"
-    default = "crgyAjX1MORtbDy63j2OvFF1/L2aApPaugNxTitsER2JvZ9+EJFjgMMVzJMQRJEfLaf6bMnEdumMuvauwYvT5A=="
-  
-}
-
 variable "vmsku" {
     type = string
     description = "VM SKU"
